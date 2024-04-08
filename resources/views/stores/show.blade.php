@@ -31,7 +31,9 @@
     @csrf
     @method('DELETE')
     </form>
+<form id="favorites-store-form" action="{{ route('favorites.store', $store->id) }}" method="POST" class="d-none">
 @csrf
+</form>
    
 
 

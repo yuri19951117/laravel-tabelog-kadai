@@ -49,7 +49,6 @@ Route::resource('reservations', ReservationController::class);
 Route::resource('reviews', ReviewController::class);
 
 Route::middleware(['auth', 'verified'])->group(function () {
-Route::resource('stores', StoreController::class);
 Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
 Route::post('favorites/{store_id}', [FavoriteController::class, 'store'])->name('favorites.store');
 Route::delete('favorites/{store_id}', [FavoriteController::class, 'destroy'])->name('favorites.destroy');

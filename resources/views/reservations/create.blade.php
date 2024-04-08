@@ -16,3 +16,9 @@
     <button type="submit">予約</button>
 
   </form>
+
+  @if (isset($errors))
+  @foreach ($errors->all() as $error)
+{{ $error }}
+  @endforeach
+  @endif
