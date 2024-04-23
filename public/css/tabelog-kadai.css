@@ -78,3 +78,40 @@ body {
       padding: 10px;
       border: solid 1px #778ca3;
      }
+
+     .nagoyameshi-sidebar-category-label {
+      width: 156px;
+      height: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #191919;
+      }
+      
+     .nagoyameshi-header-container {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        }
+         
+      .nagoyameshi-header-search-input {
+        border: solid 1px #e5e5e5;
+        }
+ 
+      .nagoyameshi-header-search-button {
+        background-color: #0fbe9f;
+        }
+         
+      .nagoyameshi-header-search-icon {
+        color: #ffffff;
+        }
+         
+      .nagoyameshi-header-fav-icon {
+        color: #191919;
+        }
+        
+      .nagoyameshi-header-shoppingcart-icon {
+        color: #ffffff;
+        }

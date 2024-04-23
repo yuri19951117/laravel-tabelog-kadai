@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -12,10 +13,27 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $stores = Store::all();
-        return view('stores.index', compact('stores'));
+        $keyword = $request->keyword;
+
+        if ($request->category !== null) {
+                         $stores = Store::where('category_id', $request->category)->sortable()->paginate(15);
+                         $total_count = Store::where('category_id', $request->category)->count();
+                         $category = Category::find($request->category);
+                        } elseif ($keyword !== null) {
+                            $stores = Store::where('name', 'like', "%{$keyword}%")->sortable()->paginate(15);
+                            $total_count = $stores->total();
+                            $category = null;
+                        }else {
+                         $stores = Store::sortable()->paginate(15);
+                         $total_count = "";
+                         $category = null;
+                        }
+        $categories = Category::all();
+
+        return view('stores.index', compact('stores', 'category', 'categories', 'total_count', 'keyword'));
+        
     }
 
     /**

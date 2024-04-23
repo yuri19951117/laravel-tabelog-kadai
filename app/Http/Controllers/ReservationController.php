@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Models\Store;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
+use App\Models\Reservation;
 
 class ReservationController extends Controller
 {
@@ -53,6 +53,12 @@ class ReservationController extends Controller
         $store = Store::find($request->store_id);
         if($store->opening_time > $date_time->format('H:i:s') || $store->closing_time < $date_time->format('H:i:s')){
             return back()->withInput($request->input())->withErrors(['message' => '営業時間外です。']);
+        }
+
+        foreach(explode(',',$store->holiday) as $holiday){
+            if(array_search($holiday,Store::DAY_OF_WEEK) == $date_time->format('w')){
+                return back()->withInput($request->input())->withErrors(['message' => '定休日です。']);
+            }
         }
         $reservation = new Reservation();
         $reservation->user_id = Auth::user()->id;
