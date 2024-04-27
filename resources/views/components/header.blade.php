@@ -41,6 +41,11 @@
                             @csrf
                         </form>
                     </li>
+                          <li class="nav-item mr-5">
+                         <a class="nav-link" href="{{ route('mypage.favorite') }}">
+                             お気に入り
+                        </a>
+                   </li>
                 @endguest
             </ul>
         </div>

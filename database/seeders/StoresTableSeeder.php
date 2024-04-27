@@ -21,14 +21,14 @@ class StoresTableSeeder extends Seeder
                 'category_id' => $i%5 + 1,
                 'img' => 'img/dummy.jpg',
                 'description' => '説明'.$i,
-                'lowest_price' => 1000,
-                'highest_price' => 8000,
+                'lowest_price' => rand(1,5)*1000,
+                'highest_price' => rand(6,10)*1000,
                 'opening_time' => '16:00',
                 'closing_time' => '22:00',
                 'post_code' => '839-9353',
                 'address' => '住所',
                 'phone_number' => '09000000000',
-                'holiday' => '月,火'
+                'holiday' => [1,2]
             ]);
             }
     }

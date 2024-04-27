@@ -13,13 +13,13 @@
              @endif
         </div>
         <div>
-            Sort By
             @sortablelink('lowest_price', '価格が安い順')
             @sortablelink('highest_price', '価格が高い順')
         </div>
          <div class="container mt-4">
              <div class="row w-100">
                  @foreach ($stores as $store)
+                 
                  <div class="col-3">
                      <a href="{{ route('stores.show', $store)}}">{{ $store->name }}</a>
                          <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
@@ -29,19 +29,22 @@
                              <p class="nagoyameshi-product-label mt-2">
                       
                              </p>
+                             {{ $store->category->name }}
                          </div>
                      </div>
+                     &yen;{{ $store->lowest_price }} 〜
+                     {{ $store->highest_price }}
                  </div>
                  @endforeach
              </div>
          </div>
          {{ $stores->appends(request()->query())->links() }}
      </div>
+     <div class="col-2">
+         @component('components.sidebar', ['categories' => $categories])
+         @endcomponent
+</div>
  </div>
  @endsection
 
 
-<div class="col-2">
-         @component('components.sidebar', ['categories' => $categories])
-         @endcomponent
-</div>

@@ -44,6 +44,7 @@ Route::get('users/mypage', 'mypage')->name('mypage');
 Route::get('users/mypage/edit', 'edit')->name('mypage.edit');
 Route::put('users/mypage', 'update')->name('mypage.update');
 Route::get('users/mypage/reservations', 'reservations' )->name('mypage.reservations');
+Route::get('users/mypage/favorite', 'favorite')->name('mypage.favorite');
 });
 
 Route::resource('reservations', ReservationController::class);

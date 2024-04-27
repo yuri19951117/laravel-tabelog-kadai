@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('store_user', function (Blueprint $table) {
-            $table->id();
-            //$table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            //$table->foreignId('store_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
+        Schema::table('store_user', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('store_id')->constrained()->cascadeOnDelete();
         });
     }
-  
 
     /**
      * Reverse the migrations.
@@ -29,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('store_user');
+        Schema::table('store_user', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -14,6 +14,10 @@ class Store extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function reviews()
     {
