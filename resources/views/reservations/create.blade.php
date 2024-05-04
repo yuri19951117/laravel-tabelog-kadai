@@ -1,7 +1,20 @@
-<form action="{{ route('reservations.store') }}" method="POST">
+@extends('layouts.app')
+ 
+@section('content')
+<div class="container">
+<div class="row">
+<div class="col-md-4 mt-5">
+<div class="center-block">
+    
+    <form action="{{ route('reservations.store') }}" method="POST">
     @csrf
+    人数
     <input type="number" name="reservation_people" value="{{old('reservation_people')}}">
+    <hr>
+    日付
     <input type="date" name="date" value="{{old('date')}}">
+    <hr>
+    時間
     <select name="time">
     @for($i = date('G',strtotime($store->opening_time)); $i <= date('G',strtotime($store->closing_time)); $i++)
     @if(!is_null(old('time')) && old('time') == str_pad($i, 2, 0, STR_PAD_LEFT))
@@ -13,12 +26,22 @@
     @endfor
     </select>
     <input type="hidden" name="store_id" value="{{ $store->id }}">
-    <button type="submit">予約</button>
+    <hr>
+    <a class="btn btn-outline-secondary" type="submit">予約</a>
 
-  </form>
+    </form>
 
-  @if (isset($errors))
-  @foreach ($errors->all() as $error)
-{{ $error }}
-  @endforeach
-  @endif
+    @if (isset($errors))
+    @foreach ($errors->all() as $error)
+    {{ $error }}
+    @endforeach
+    @endif
+
+</div>
+</div>
+</div>
+</div>
+
+@endsection
+
+

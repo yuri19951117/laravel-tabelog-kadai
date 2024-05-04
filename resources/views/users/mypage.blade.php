@@ -77,6 +77,22 @@
                         @csrf
                     </form>
                 </div>
+                @if (session('message'))
+                {{ session('message') }}
+                @endif
+
+
+        @if(!$user->subscribed('main'))
+        <a href="{{ route('subscript.index') }}">有料会員登録</a>
+        @else
+        <a href="{{ route('subscript.edit') }}">クレジットカード情報の変更</a>
+        <a href="{{ route('subscript.cancel') }}">有料会員の解約</a>
+        @endif
+
+
+
+
+
             </div>
         </div>
 

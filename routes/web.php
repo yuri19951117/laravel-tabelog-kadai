@@ -45,6 +45,7 @@ Route::get('users/mypage/edit', 'edit')->name('mypage.edit');
 Route::put('users/mypage', 'update')->name('mypage.update');
 Route::get('users/mypage/reservations', 'reservations' )->name('mypage.reservations');
 Route::get('users/mypage/favorite', 'favorite')->name('mypage.favorite');
+
 });
 
 Route::resource('reservations', ReservationController::class);
@@ -60,10 +61,11 @@ Route::delete('favorites/{store_id}', [FavoriteController::class, 'destroy'])->n
  Route::controller(SubscriptController::class)->middleware('auth','verified')->group(function () {
     Route::get('subscript/', 'index')->name('subscript.index');
     Route::post('subscript/', 'register')->name('subscript.register');
-    Route::get('subscript/edit', 'edit')->name('subscript.edit');    
-    Route::post('subscript/edit', 'update')->name('subscript.update');
-    Route::get('subscript/cancel', 'cancel_confirm')->name('subscript.cancel_confirm');    
-    Route::post('subscript/cancel', 'cancel')->name('subscript.cancel');
+    Route::get('subscript/edit', 'edit')->middleware('subscribed')->name('subscript.edit');    
+    Route::post('subscript/edit', 'update')->middleware('subscribed')->name('subscript.update');
+    Route::get('subscript/cancel', 'cancel_confirm')->middleware('subscribed')->name('subscript.cancel_confirm');    
+    Route::post('subscript/cancel', 'cancel')->middleware('subscribed')->name('subscript.cancel');
+    
 });
 
 

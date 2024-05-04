@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm nagoyameshi-header-container">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
+
+<div class="logo">
+    <a href="{{ url('/') }}"><img src="img/NAGOYAMESHI.jpg" width="300" height="100"></a>
+</div>  
         <form action="{{ route('stores.index') }}" method="GET" class="row g-1">
             <div class="col-auto">
-            <input class="form-control nagoyameshi-header-search-input" name="keyword">
+                <input class="form-control nagoyameshi-header-search-input" name="keyword">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn nagoyameshi-header-search-button"><i class="fas fa-search nagoyameshi-header-search-icon"></i></button>
@@ -19,21 +19,17 @@
             <ul class="navbar-nav ms-auto mr-5 mt-2">
                 @guest
                     <li class="nav-item mr-5">
-                        <a class="nav-link" href="{{ route('register') }}">登録</a>
+                        <a class="nav-link" href="{{ route('register') }}">会員登録</a>
                     </li>
                     <li class="nav-item mr-5">
                         <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                     </li>
                     <hr>
-                    <li class="nav-item mr-5">
-                        <a class="nav-link" href="{{ route('login') }}"><i class="far fa-heart"></i></a>
-                    </li>
-                    <li class="nav-item mr-5">
-                        <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
+
                 @else
+                
                     <li class="nav-item mr-5">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             ログアウト
                         </a>
 
