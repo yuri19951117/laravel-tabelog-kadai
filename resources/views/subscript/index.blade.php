@@ -1,10 +1,13 @@
+@extends('layouts.app') 
+
+@section('content')
 
 <form id="card_form" action="{{ route('subscript.register') }}" method="POST">
     @csrf
     <input name="card-holder-name" id="card-holder-name" type="text">
     <div id="card-element"></div> 
     <input name="payment_method" class="ms-3" type="hidden">                                 
-    <button type="button" id="card-button" data-secret="{{ $intent->client_secret }}">登録</button>
+    <button type="button" class="btn btn-design" id="card-button" data-secret="{{ $intent->client_secret }}">登録</button>
 </form>
 
 @error('card-holder-name')
@@ -46,3 +49,4 @@
 </script>
 
 
+@endsection

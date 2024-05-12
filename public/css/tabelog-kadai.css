@@ -1,6 +1,6 @@
 body {
-       background-color: #f8fafc;
-       font-family: 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+       background-color: #CFDDCF;
+       font-family: 'ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
        font-size: 14px;
        font-weight: 500;
        font-stretch: normal;
@@ -25,6 +25,8 @@ body {
        font-style: normal;
        line-height: normal;
        letter-spacing: normal;
+       color:#3d1602;
+
      }
      
      h3 {
@@ -82,33 +84,35 @@ body {
      .nagoyameshi-sidebar-category-label {
       width: 156px;
       height: 20px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
-      font-stretch: normal;
+      font-stretch: normal; 
       font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: #191919;
+      line-height: normal; /* 行の高さ */
+      letter-spacing: normal;  /* 文字の間隔を指定するCSSプロパティ */
+      color: #ffffff;
+      text-align: center;
+
       }
       
      .nagoyameshi-header-container {
-      background-color: #0f7829;  /* 背景色指定 */
-      width: 200px;               /* 幅指定 */
-      height: 90px;               /* 高さ指定 */
+      background-color: #ffffff;  /* 背景色指定 */
+      /* width: 200px;               幅指定 */
+      height: 100px;               /* 高さ指定 */
   
         }
          
-      .nagoyameshi-header-search-input {
-        border: solid 1px #e5e5e5;
-        }
+    .nagoyameshi-header-search-input {
+      border: solid 1px #3b2403;
+      }
  
       .nagoyameshi-header-search-button {
-        background-color: #157734;
-        }
+      background-color: #518762;
+      }
          
       .nagoyameshi-header-search-icon {
-        color: #094b1d;
-        }
+      color: #ffffff;
+      }
          
       .nagoyameshi-header-fav-icon {
         color: #191919;
@@ -117,3 +121,82 @@ body {
       .nagoyameshi-header-shoppingcart-icon {
         color: #ffffff;
         }
+
+      .nagoyameshi-category-container {
+          /* background-color: #E9E9DC;  背景色指定 */
+          color:#6e6310f3;
+          text-decoration:none;
+        }
+
+        a {
+          text-decoration:none;
+          }
+          
+          a:link {
+          color:#3d1602;
+          }
+          
+          a:visited {
+          color:#3d1602;
+          }
+          
+          a:hover {
+          color:#3d1602;
+          text-decoration:underline;
+          }
+
+        .welcome-background {
+          background-image: url('../img/top.jpg');    /* 背景画像指定 */
+          background-size: cover;               /* 全画面 */
+          /* background-attachment: fixed;         固定 */
+          background-position: center center;   /* 縦横中央 */
+          background-repeat: no-repeat;
+        }
+
+        .img-store{
+          width: auto;
+          height: 140px;
+          display: block;
+          margin: auto;
+          border-radius: 0.375rem
+          }
+
+        .rounded{
+          border-radius: 0.375rem
+        }
+
+        .block-center{
+          margin-right: auto;
+          margin-left: auto;
+        }
+        
+        .btn-design,
+          a.btn-design {
+          color: #3d1602;
+          border: 1px solid #3d1602;
+          
+          }
+          .btn-design:hover,
+          a.btn-design:hover {
+          color: #3d1602;
+          background: #ffffff;
+          }
+
+
+        select{
+           width:200px;
+           height:38px;
+           border-radius: 0.375rem;
+           background: #ffffff;
+
+        }
+        
+      .background{
+        background: #FFFEF6 ;
+        opacity: 0.9;
+      }
+
+      textarea {
+        width: 800px;  /* 横幅 */
+        height: 200px; /* 高さ */
+      }

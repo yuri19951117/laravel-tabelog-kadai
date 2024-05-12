@@ -4,7 +4,7 @@
 <div class="container">
 <div class="row">
 <div class="col-md-6 mt-5">
-
+    
 <form action="{{ route('reviews.store') }}" method="POST">
 @auth
              <div class="row">
@@ -13,11 +13,11 @@
                         @csrf
                         <h2>レビュー内容</h2>
                          @error('content')
-                             <strong>レビュー内容を入力してください</strong>
+                             <strong>※レビュー内容を入力してください </strong>
                          @enderror
                          <textarea name="content" class="form-control m-2"></textarea>
                          <input type="hidden" name="store_id" value="{{$store->id}}">
-                         <button type="submit" class="btn btn-outline-secondary">レビューを投稿</button>
+                         <button type="submit" class="btn btn-design">投稿</button>
                      </form>
                  </div>
              </div>

@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Store;
+use App\Models\Category;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -28,7 +29,7 @@ class StoreController extends AdminController
 
         $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Name'));
-        $grid->column('category_id', __('Category id'));
+        $grid->column('category.name', __('Category Name'));
         $grid->column('img', __('Img'));
         $grid->column('description', __('Description'));
         $grid->column('opening_time', __('Opening time'));
@@ -41,6 +42,10 @@ class StoreController extends AdminController
         $grid->column('holiday', __('Holiday'));
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
+        $grid->filter(function($filter) {$filter->like('name','店舗名');
+        });
+
+
 
         return $grid;
     }
@@ -57,7 +62,7 @@ class StoreController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
-        $show->field('category_id', __('Category id'));
+        $show->field('category.name', __('Category Name'));
         $show->field('img', __('Img'));
         $show->field('description', __('Description'));
         $show->field('opening_time', __('Opening time'));
@@ -84,7 +89,7 @@ class StoreController extends AdminController
         $form = new Form(new Store());
 
         $form->text('name', __('Name'));
-        $form->text('category_id', __('Category id'));
+        $form->select('category_id', __('Category Name'))->options(Category::all()->pluck('name', 'id'));
         $form->image('img', __('Img'));
         $form->textarea('description', __('Description'));
         $form->time('opening_time', __('Opening time'))->default(date('H:i:s'));

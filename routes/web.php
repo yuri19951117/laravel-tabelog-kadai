@@ -8,6 +8,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\SubscriptController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,8 @@ use App\Http\Controllers\SubscriptController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -67,5 +67,7 @@ Route::delete('favorites/{store_id}', [FavoriteController::class, 'destroy'])->n
     Route::post('subscript/cancel', 'cancel')->middleware('subscribed')->name('subscript.cancel');
     
 });
+
+
 
 

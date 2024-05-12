@@ -3,7 +3,7 @@
 @section('content')
 <div class="container  d-flex justify-content-center mt-3">
     <div class="w-75">
-        <h1>お気に入り</h1>
+        <h2>お気に入り</h2>
 
        <hr>
 
@@ -15,15 +15,16 @@
                             <img src="{{ asset('img/dummy.png')}}" class="img-fluid w-100">
                         </a>
                         <div class="container mt-3">
-                            <h5 >{{ $favorite_store->name }}</h5>
+                            <h3>{{ $favorite_store->name }}</h3>
                             <h6 >&yen;{{ $favorite_store->lowest_price}}〜{{ $favorite_store->highest_price}}</h6>
                         </div>
                     </div>
                 </div>
+                <hr>
             @endforeach
         </div>
 
-        <hr>
+       
     </div>
 </div>
 @endsection

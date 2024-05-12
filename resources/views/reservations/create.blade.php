@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
 <div class="row">
-<div class="col-md-4 mt-5">
-<div class="center-block">
+<div class="col-md-4 mt-5 mx-auto">
     
+    <h2>予約画面</h2>
     <form action="{{ route('reservations.store') }}" method="POST">
     @csrf
     人数
@@ -27,7 +27,8 @@
     </select>
     <input type="hidden" name="store_id" value="{{ $store->id }}">
     <hr>
-    <a class="btn btn-outline-secondary" type="submit">予約</a>
+    <a class="btn btn-design" type="submit">予約</a>
+
 
     </form>
 
@@ -37,7 +38,6 @@
     @endforeach
     @endif
 
-</div>
 </div>
 </div>
 </div>

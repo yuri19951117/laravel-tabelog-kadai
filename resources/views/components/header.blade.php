@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm nagoyameshi-header-container">
 
 <div class="logo">
-    <a href="{{ url('/') }}"><img src="img/NAGOYAMESHI.jpg" width="300" height="100"></a>
+    <a href="{{ url('/') }}"><img src="{{ asset('img/NAGOYAMESHI.jpg')}}" width="300" height="100"></a>
 </div>  
         <form action="{{ route('stores.index') }}" method="GET" class="row g-1">
             <div class="col-auto">

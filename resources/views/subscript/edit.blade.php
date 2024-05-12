@@ -1,3 +1,7 @@
+@extends('layouts.app') 
+
+@section('content')
+
 @if (session('message'))
     {{ session('message') }}
 @endif
@@ -51,6 +55,8 @@
         }
     });
 </script>
+
+@endsection
 
 
 
