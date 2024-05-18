@@ -27,7 +27,7 @@
     </select>
     <input type="hidden" name="store_id" value="{{ $store->id }}">
     <hr>
-    <a class="btn btn-design" type="submit">予約</a>
+    <button class="btn btn-design" type="submit">予約</button>
 
 
     </form>

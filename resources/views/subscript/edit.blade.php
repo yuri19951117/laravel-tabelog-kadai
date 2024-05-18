@@ -6,6 +6,10 @@
     {{ session('message') }}
 @endif
 
+<div class="container">
+<div class="row">
+<div class="col-md-6 mt-5 text-center mx-auto">
+
 <p>{{$user->defaultPaymentMethod()->billing_details->name}}</p>
 <p>**** **** **** {{$user->defaultPaymentMethod()->card->last4}}</p>
 
@@ -56,6 +60,9 @@
     });
 </script>
 
+</div>
+</div>
+</div>
 @endsection
 
 

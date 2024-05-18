@@ -3,7 +3,7 @@
 
 <div class="container">
 <div class="row">
-<div class="col-md-6 mt-5">
+<div class="col-md-6 mt-5 mx-auto">
     
 <form action="{{ route('reviews.store') }}" method="POST">
 @auth

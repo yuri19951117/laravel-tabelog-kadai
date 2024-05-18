@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-md-6 mt-5">
 
-<img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+<img src="{{ asset($store->img)}}" class="img-thumbnail">
 </div>
 
 <div class="col-md-6 mt-5">
@@ -18,6 +18,8 @@
     <p>予算：&yen;{{ $store->lowest_price }} 〜{{ $store->highest_price }}<p>
     <p>住所：{{ $store->address }}<p>
     <hr> 
+    @auth
+    @if(Auth::user()->subscribed('main'))
     <a class="btn btn-design" href="{{ route('reservations.create', ['store_id' => $store->id]) }}">予約する</a>
     <a class="btn btn-design"  href="{{ route('reviews.create', ['store_id' => $store->id]) }}">レビューを投稿する</a>   
     
@@ -33,6 +35,8 @@
         href="{{ route('favorites.store', $store->id) }}" onclick="event.preventDefault(); document.getElementById('favorites-store-form').submit();">
         <i class="fa fa-heart"></i>お気に入り</button>
     @endif
+    @endif
+    @endauth
 
 </div>
 

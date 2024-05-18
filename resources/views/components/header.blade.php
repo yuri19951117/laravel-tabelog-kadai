@@ -17,6 +17,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mr-5 mt-2">
+
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="{{ route('profile.show') }}">
+                    会社情報
+                </a>
+            </li>
+
                 @guest
                     <li class="nav-item mr-5">
                         <a class="nav-link" href="{{ route('register') }}">会員登録</a>
@@ -42,6 +49,15 @@
                              お気に入り
                         </a>
                    </li>
+
+                   <li class="nav-item mr-5">
+                         <a class="nav-link" href="{{ route('mypage') }}">
+                             マイページ
+                        </a>
+                   </li>
+
+
+
                 @endguest
             </ul>
         </div>

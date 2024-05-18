@@ -105,7 +105,7 @@
             </div>
         </div>
 
-        
+        <hr>
     
         @else
         <a href="{{ route('subscript.edit') }}">クレジットカード情報の変更</a>

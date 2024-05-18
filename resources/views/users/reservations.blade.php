@@ -13,7 +13,7 @@
                 <div class="col-md-7 mt-2">
                     <div class="d-inline-flex">
                     <a href="{{ route('stores.show', $reservation->store->id) }}" class="w-25">
-                            <img src="{{ asset('img/dummy.png')}}" class="img-fluid w-100">
+                            <img src="{{ asset($reservation->store->img)}}" class="img-fluid w-100">
                         </a>
                         <div class="container mt-3">
                             <h6>店舗名：{{ $reservation->store->name }}</h6>

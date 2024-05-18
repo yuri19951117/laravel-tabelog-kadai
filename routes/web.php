@@ -9,6 +9,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\SubscriptController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [CompanyController::class, 'index']);
 
 
 Route::get('/dashboard', function () {
@@ -50,6 +52,7 @@ Route::get('users/mypage/favorite', 'favorite')->name('mypage.favorite');
 
 Route::resource('reservations', ReservationController::class);
 Route::resource('reviews', ReviewController::class);
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
 Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');

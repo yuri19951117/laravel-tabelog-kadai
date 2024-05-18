@@ -165,9 +165,8 @@ body {
           border-radius: 0.375rem
         }
 
-        .block-center{
-          margin-right: auto;
-          margin-left: auto;
+        .block-center ul{
+        justify-content: center;
         }
         
         .btn-design,

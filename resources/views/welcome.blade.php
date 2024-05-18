@@ -10,17 +10,16 @@
 
             <div class="container">
             <div class="row">
-            <div class="col-md-12 px-1 my-5 py-4 background text-center rounded">
+            <div class="col-md-6 px-1 my-5 py-4 background text-center rounded mx-auto">
 
                 <h2>名古屋のB級グルメを探す</h2>
-                <form method="POST" action="{{ route('stores.index') }}">
-                <select name="keyword"
-                <option value='' </option>
+                <form method="GET" action="{{ route('stores.index') }}">
+                <select name="category">
+                <option value='' >選択してください</option>
                     @foreach ($categories as $category)
-                    <option value= "$category->id" > {{ $category->name }}</option>
+                    <option value= "{{$category->id}}" > {{ $category->name }}</option>
                     @endforeach
                 </select>
-                <input type="hidden" name="keyword" value="{{$category->id}}">
                 <button type="submit" class="btn btn-design">検索</button>
                </form>
 

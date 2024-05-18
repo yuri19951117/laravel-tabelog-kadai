@@ -35,7 +35,7 @@
                             @foreach ($stores as $store)
                                 <div class="col-3 mb-3 mx-2 background rounded" style=height:200px;width:250px>
                                     <a href="{{ route('stores.show', $store)}}">
-                                    <img src="{{ asset('img/dummy.png')}}" class="img-store mt-3 mb-1">    
+                                    <img src="{{ asset($store->img)}}" class="img-store mt-3 mb-1">    
                                     &nbsp;{{ $store->name }}</a>    
                                 <div class="row">
                                 <div class="col-12">
