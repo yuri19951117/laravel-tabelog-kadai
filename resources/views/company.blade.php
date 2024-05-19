@@ -10,27 +10,27 @@
 <table class="company">
  <tr>
   <td><b>会社名</b></td>
-  <td>{{$company->name}}</td>
+  <td>{{$company[0]->name}}</td>
   </tr>
  <tr>
   <td><b>代表</b></td>
-  <td>侍太郎</td>
+  <td>{{$company[0]->representative}}</td>
  </tr>
  <tr>
   <td><b>設立日</b></td>
-  <td>2024-06-02</td>
+  <td>{{$company[0]->Establishmentday}}</td>
  </tr>
  <tr>
   <td><b>郵便番号</b></td>
-  <td>〒1234567</td>
+  <td>{{$company[0]->postcode}}</td>
  </tr>
  <tr>
   <td><b>住所</b></td>
-  <td>東京都侍区侍町1-2-3</td>
+  <td>{{$company[0]->address}}</td>
  </tr>
  <tr>
   <td><b>事業内容</b></td>
-  <td>飲食店の検索・予約サービス</td>
+  <td>{{$company[0]->business}}</td>
  </tr>
 </table>
 

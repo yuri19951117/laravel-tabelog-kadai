@@ -1,30 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container  d-flex justify-content-center mt-3">
-    <div class="w-75">
-        <h2>お気に入り</h2>
+<div class="container">
+<div class="row">
 
-       <hr>
+<h2>お気に入り</h2> 
 
-        <div class="row">
-            @foreach ($favorite_stores as $favorite_store)
-                <div class="col-md-7 mt-2">
-                    <div class="d-inline-flex">
-                        <a href="{{ route('stores.show', $favorite_store->id) }}" class="w-25">
-                            <img src="{{ asset($favorite_store->img)}}" class="img-fluid w-100">
-                        </a>
-                        <div class="container mt-3">
-                            <h3>{{ $favorite_store->name }}</h3>
-                            <h6 >&yen;{{ $favorite_store->lowest_price}}〜{{ $favorite_store->highest_price}}</h6>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            @endforeach
+<hr>
+    
+    @foreach ($favorite_stores as $favorite_store)
+        <div class="col-6 text-center">
+            <a href="{{ route('stores.show', $favorite_store->id) }}" class="w-25">
+                <img src="{{ asset($favorite_store->img)}}" class="img-fluid w-50">
+            </a>
         </div>
-
-       
-    </div>
+                
+        
+        <div class="col-6">
+            <h3>{{ $favorite_store->name }}</h3>
+            <p>営業時間：{{ $favorite_store->opening_time }} 〜{{ $favorite_store->closing_time }}<p>
+            <p>定休日：{{ $favorite_store->holiday}}<p>
+            <p>住所：{{ $favorite_store->address }}<p>
+            <p>予算：&yen;{{ $favorite_store->lowest_price}}〜{{ $favorite_store->highest_price}}</p>
+            
+        </div>
+        <p></p>
+        <hr>
+            @endforeach
+        
+        
+</div>
 </div>
 @endsection

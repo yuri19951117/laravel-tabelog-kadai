@@ -19,7 +19,7 @@
             <ul class="navbar-nav ms-auto mr-5 mt-2">
 
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('profile.show') }}">
+                <a class="nav-link" href="{{ route('company.index') }}">
                     会社情報
                 </a>
             </li>

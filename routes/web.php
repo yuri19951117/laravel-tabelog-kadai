@@ -23,7 +23,7 @@ use App\Http\Controllers\CompanyController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/', [CompanyController::class, 'index']);
+Route::get('company', [CompanyController::class, 'index'])->name('company.index');
 
 
 Route::get('/dashboard', function () {
