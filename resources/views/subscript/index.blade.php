@@ -2,13 +2,28 @@
 
 @section('content')
 
+<div class="container">
+<div class="row">
+<div class="col-6 mt-5 mx-auto">
+
+<h2 class="text-center">クレジットカード情報登録画面</h2>
+
+<div class="container">
+<div class="row">
+<div class="col-6 py-4 background rounded mx-auto">
 <form id="card_form" action="{{ route('subscript.register') }}" method="POST">
     @csrf
-    <input name="card-holder-name" id="card-holder-name" type="text">
+    名義人：<input name="card-holder-name" id="card-holder-name" type="text">
+    <p></p>
+    カード番号：<input name="payment_method" class="ms-3" type="hidden">                                 
     <div id="card-element"></div> 
-    <input name="payment_method" class="ms-3" type="hidden">                                 
-    <button type="button" class="btn btn-design" id="card-button" data-secret="{{ $intent->client_secret }}">登録</button>
+    <p></p>
+    <button type="button" id="card-button" data-secret="{{ $intent->client_secret }}">登録</button>
 </form>
+
+</div>
+</div>
+</div>
 
 @error('card-holder-name')
 <p>カード名義人を入力してください</p>
@@ -49,4 +64,15 @@
 </script>
 
 
+
+
+</div>
+</div>
+</div>
 @endsection
+
+
+
+
+
+

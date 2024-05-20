@@ -6,6 +6,10 @@
     <div class="w-50">
         <h1>マイページ</h1>
 
+        @if (session('message'))
+                {{ session('message') }}
+                @endif
+
         <hr>
 
         <div class="container">
@@ -79,13 +83,7 @@
             </div>
         </div>
 
-        <hr>
-
-                @if (session('message'))
-                {{ session('message') }}
-                @endif
-
-       
+        <hr>       
 
         @if(!$user->subscribed('main'))
         <div class="container">

@@ -13,19 +13,21 @@
     <hr> 
     <p>{{ $store->description }}</p>
     <hr> 
-    <p>営業時間：{{ $store->opening_time }} 〜{{ $store->closing_time }}<p>
+    <p>営業時間：{{ mb_substr( $store -> opening_time, 0, 5) }} 〜{{ mb_substr( $store -> closing_time, 0, 5) }}<p>
     <p>定休日：{{ $store->holiday}}<p>
     <p>予算：&yen;{{ $store->lowest_price }} 〜{{ $store->highest_price }}<p>
     <p>住所：{{ $store->address }}<p>
     <hr> 
     @auth
     @if(Auth::user()->subscribed('main'))
-    <a class="btn btn-design" href="{{ route('reservations.create', ['store_id' => $store->id]) }}">予約する</a>
-    <a class="btn btn-design"  href="{{ route('reviews.create', ['store_id' => $store->id]) }}">レビューを投稿する</a>   
-    
+     
     @if (session('message'))
         {{ session('message') }}
     @endif
+    
+    <a class="btn btn-design" href="{{ route('reservations.create', ['store_id' => $store->id]) }}">予約する</a>
+    <a class="btn btn-design"  href="{{ route('reviews.create', ['store_id' => $store->id]) }}">レビューを投稿する</a>   
+   
     
     @if(Auth::user()->favorite_stores()->where('store_id', $store->id)->exists())
         <button type="button" class="btn btn-design" 
