@@ -9,7 +9,6 @@
 <hr>
     @if($favorite_stores->count()==0)
     お気に入りに登録している店舗はありません。
-
     @else
     @foreach ($favorite_stores as $favorite_store)
         <div class="col-6 text-center">

@@ -6,6 +6,10 @@
 
 <h2>予約一覧</h2> 
 <hr>
+
+@if($reservations->count()==0)
+    予約している店舗はありません。
+@else
 @foreach ($reservations as $reservation)
 
         <div class="col-6 text-center">
@@ -39,6 +43,7 @@
    {{ session('message') }}
     @endif
 
+    @endif
     </div> 
     </div>
     
